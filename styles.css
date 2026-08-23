@@ -168,7 +168,7 @@ p { margin: 0; }
   top: -100%;
   z-index: 10;
 }
-.skip-link:focus-visible { top: 1rem; }
+.skip-link:focus { top: 1rem; }
 
 /* ─────────────────────────── Kop van de pagina ─────────────────────────── */
 .masthead {
