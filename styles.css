@@ -161,6 +161,15 @@ p { margin: 0; }
 }
 .link-under:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
+/* Zichtbaar zodra hij focus krijgt, anders uit beeld. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 10;
+}
+.skip-link:focus-visible { top: 1rem; }
+
 /* ─────────────────────────── Kop van de pagina ─────────────────────────── */
 .masthead {
   display: flex;
