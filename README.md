@@ -40,6 +40,27 @@ De pagina heeft vier plekken waar nog een foto moet komen. Ze zijn nu ingevuld m
 
 Zet het bestand op dat pad en vervang het `<figure>`-blok eronder door een gewone afbeelding met een `alt`-tekst die beschrijft wat er te zien is.
 
+## Het Instagram-blok
+
+Onderaan de pagina, vlak boven Contact, staat een blok met de laatste Instagram-posts. Dat werkt anders dan de gebruikelijke Instagram-embed, en met opzet: **de posts worden opgehaald bij het bouwen, niet in de browser van de bezoeker.** Een dagelijkse GitHub Action haalt ze op, zet de afbeeldingen in deze repo en schrijft het blok in `index.html`. De bezoeker krijgt dus gewone afbeeldingen van ons eigen adres.
+
+Dat scheelt: geen scripts van Meta, geen tracking-cookies, geen cookiebanner, en het blok ziet eruit als de rest van de site in plaats van als een ingeplakt Instagram-raster. Hashtags en emoji worden uit de bijschriften gehaald; de link gaat naar de originele post.
+
+**Zolang er geen token is ingesteld, staat er een korte tekst met een link naar het profiel.** Die blijft gewoon staan; er breekt niets.
+
+### Eenmalig instellen
+
+1. **Zet @bloom_swf om naar een Creator- of Business-account.** In de Instagram-app onder Instellingen → Accounttype en tools. Dit is niet optioneel: persoonlijke accounts kunnen sinds december 2024 via geen enkele officiële weg meer worden uitgelezen.
+2. Maak op [developers.facebook.com](https://developers.facebook.com/) een app aan en voeg het product **Instagram** toe (de "Instagram API with Instagram Login"). Koppel daar het account.
+3. Genereer een access token en wissel het in voor een **long-lived token** — die is 60 dagen geldig. Meta's documentatie beschrijft deze stap onder "Long-Lived Access Tokens".
+4. Zet het token in deze repo onder Settings → Secrets and variables → Actions als **`IG_TOKEN`**.
+5. Optioneel maar aan te raden: zet ook een **`GH_PAT`** klaar — een fine-grained token met schrijfrechten op de secrets van deze repo. Dan verlengt de Action het Instagram-token elke dag automatisch en hoef je er nooit meer naar om te kijken. Zonder dit moet `IG_TOKEN` elke twee maanden met de hand worden vervangen; de Action waarschuwt daarover in het logboek.
+6. Start de workflow één keer handmatig via het tabblad **Actions → Instagram-posts bijwerken → Run workflow**.
+
+### Aantal posts wijzigen
+
+In `.github/workflows/instagram.yml` staat `IG_LIMIT: '3'`. De vormgeving is op drie afgestemd.
+
 ## Publiceren
 
 Elke push naar `main` zet de site binnen een paar minuten live. Er is geen aparte bouwstap of deploy-commando.

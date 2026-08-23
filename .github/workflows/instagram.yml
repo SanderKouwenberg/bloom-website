@@ -1,0 +1,68 @@
+name: Instagram-posts bijwerken
+
+on:
+  schedule:
+    # Elke dag om 06:00 UTC. Instagram wordt vaker bijgewerkt dan deze site,
+    # dus haalt de site één keer per dag op wat er nieuw is.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
+
+jobs:
+  bijwerken:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Posts ophalen en de pagina bijwerken
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_LIMIT: '3'
+        run: node scripts/fetch-instagram.mjs
+
+      - name: Wijzigingen vastleggen
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Niets veranderd."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Instagram-posts bijgewerkt"
+          git push
+
+      # Het long-lived token verloopt na 60 dagen. Deze stap verlengt het.
+      # Zonder GH_PAT wordt het vernieuwde token niet teruggeschreven en moet
+      # het handmatig worden vervangen; de stap waarschuwt daar dan over.
+      - name: Token verlengen
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$IG_TOKEN" ]; then
+            echo "Geen IG_TOKEN ingesteld — niets te verlengen."
+            exit 0
+          fi
+          antwoord=$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_TOKEN")
+          nieuw=$(echo "$antwoord" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{process.stdout.write(JSON.parse(s).access_token||"")}catch{}})')
+          if [ -z "$nieuw" ]; then
+            echo "::warning::Token verlengen mislukt. Antwoord: $antwoord"
+            exit 0
+          fi
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::Token verlengd, maar er is geen GH_PAT om het op te slaan. Vervang IG_TOKEN handmatig binnen 60 dagen."
+            exit 0
+          fi
+          gh secret set IG_TOKEN --body "$nieuw"
+          echo "Token verlengd en opgeslagen."

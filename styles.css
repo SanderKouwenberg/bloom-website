@@ -343,6 +343,52 @@ p { margin: 0; }
 .founder { display: flex; flex-direction: column; gap: 1.25rem; }
 .founder__role { font-size: var(--t-eyebrow); letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
 
+/* ─────────────────────────── Instagram ─────────────────────────── */
+.ig-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 1.25rem;
+}
+.ig-intro { margin-top: 1.5rem; max-width: 44rem; }
+
+.ig-grid {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+.ig-card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.ig-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--sand);
+  transition: opacity 0.25s ease;
+}
+.ig-card__link:hover img { opacity: 0.88; }
+.ig-card__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.ig-card__link:hover .ig-card__text { color: var(--ink); }
+.ig-card__date {
+  font-size: var(--t-small);
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
 /* ─────────────────────────── Contact ─────────────────────────── */
 .contact { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.75rem; }
 .contact .prose { max-width: 34rem; }
@@ -401,6 +447,8 @@ p { margin: 0; }
   .taboo,
   .founders { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .disciplines { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+  .ig-grid { gap: 1.5rem; }
+  .ig-card__text { font-size: 0.9375rem; }
   .converge { display: none; }
   .before-start { flex-direction: column; gap: 0.75rem; }
   .before-start__label { width: auto; }
@@ -414,5 +462,6 @@ p { margin: 0; }
   .nav a[href="#wij"] { display: none; }
   .masthead { padding-block: 1rem 0; gap: 0.5rem 1.5rem; }
   .modules li { flex-direction: column; gap: 0.25rem; }
+  .ig-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
   .taboo__questions li { padding-left: 1rem; }
 }
