@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Karla:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #FFF8F5; }
+    a { color: #12655A; text-decoration: none; }
+    a:hover { color: #0D4A42; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #FFF8F5; font-family: 'Karla', 'Helvetica Neue', Arial, sans-serif; color: #2A2320; padding: 96px 0 0 0; display: flex; flex-direction: column; gap: 56px;">
+
+  <div style="display: flex; gap: 80px; align-items: flex-end; padding: 0 72px;">
+    <div style="width: 700px; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span style="width: 56px; height: 2px; background: linear-gradient(90deg, #FF66C3, #FFAA87 55%, #FFD95D);"></span>
+        <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #6E5F58;">Onze aanpak</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 58px; line-height: 1.08; letter-spacing: -0.01em;">Twee vakgebieden,<br>één traject</h2>
+    </div>
+    <p style="margin: 0 0 8px 0; flex-grow: 1; font-size: 18px; line-height: 1.7; color: #564A44;">Klachten rond hormonen, voeding, bekkenbodem en energie worden meestal los van elkaar behandeld. Terwijl ze samenhangen. Daarom sturen we je niet naar twee behandelaars, maar leggen we onze vakgebieden naast elkaar in één programma.</p>
+  </div>
+
+  <div style="margin: 0 72px; border-top: 1px solid #E8D9D0; border-bottom: 1px solid #E8D9D0; padding: 24px 0; display: flex; gap: 40px; align-items: baseline;">
+    <span style="width: 190px; flex-shrink: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A08D83;">Voordat je begint</span>
+    <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #564A44;">Je start niet bij de theorie, maar bij jezelf. Met de Lifescan en de Greene's Climacteriële Scorelijst breng je eerst in kaart waar je nu staat — daarna weet je waar je aan werkt, en waarom.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 96px; padding: 0 72px;">
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A08D83;">Anouk de Veen — diëtist</span>
+      <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.15;">Voeding en leefstijl</h3>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #564A44;">Voeding geneest de overgang niet, maar kan je lichaam wel geven wat het juist nu nodig heeft. Geen streng dieet — wel begrijpen waarom je lichaam andere behoeften heeft, en wat er dan werkt. Van weekmenu tot darmen, van eiwitten tot energie.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A08D83;">Shirley Sniekers — bekkenfysiotherapeut</span>
+      <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.15;">Bekkenbodem en kracht</h3>
+      <p style="margin: 0; font-size: 17px; line-height: 1.75; color: #564A44;">Vijftien lessen over het gebied waar veel vrouwen jarenlang stil mee blijven rondlopen. Van herkennen en benoemen tot gericht trainen — inclusief wat er verandert aan intimiteit, want ook dat hoort erbij.</p>
+    </div>
+
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+    <svg width="1296" height="128" viewBox="0 0 1296 128" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;" aria-hidden="true">
+      <path d="M324 0 C 324 76, 648 44, 648 128" stroke="#FF7FAD" stroke-width="1.5" fill="none"></path>
+      <path d="M972 0 C 972 76, 648 44, 648 128" stroke="#FFC46F" stroke-width="1.5" fill="none"></path>
+      <path d="M648 92 L 648 128" stroke="{{accent}}" stroke-width="2.5" fill="none"></path>
+    </svg>
+    <div style="width: 100%; background: #F9EDE6; padding: 64px 72px 72px 72px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <p style="margin: 0; max-width: 880px; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 36px; line-height: 1.38; color: #2A2320;">Wij werken samen, stemmen onze aanpak op elkaar af en begeleiden je met aandacht, rust en expertise.</p>
+      <span style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #A08D83;">Anouk en Shirley</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#12655A","options":["#12655A","#158878","#C2185B","#2A2320"],"section":"Merk"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#12655A' };
+  }
+}
+</script>
+</body>
+</html>

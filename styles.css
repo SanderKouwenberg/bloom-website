@@ -1,0 +1,408 @@
+@import url('assets/fonts/fonts.css');
+
+/* ───────────────────────────────────────────────────────────────
+   Design tokens — de stuurknop van de hele pagina.
+   Kleuren zijn gemeten uit het logobestand, niet geschat.
+   ─────────────────────────────────────────────────────────────── */
+:root {
+  /* Vlakken en tekst */
+  --cream:      #FFF8F5;
+  --sand:       #F9EDE6;
+  --ink:        #2A2320;
+  --ink-soft:   #564A44;
+  --muted:      #6E5F58;
+  --faint:      #7A675E;
+  --rule:       #E8D9D0;
+  --rule-soft:  #F0E2DA;
+
+  /* Interactie — de groene steel uit het logo */
+  --accent:      #12655A;
+  --accent-dark: #0D4A42;
+
+  /* Logoverloop — uitsluitend haarlijnen en accenten, nooit vlakken */
+  --pink:      #FF66C3;
+  --pink-soft: #FF7FAD;
+  --salmon:    #FF9B94;
+  --orange:    #FFAA87;
+  --gold:      #FFC46F;
+  --yellow:    #FFD95D;
+  --gradient:  linear-gradient(90deg, var(--pink), var(--orange) 55%, var(--yellow));
+
+  /* Typografie */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:    'Karla', 'Helvetica Neue', Arial, sans-serif;
+
+  --t-hero:  clamp(2.4rem, 6vw, 4.25rem);
+  --t-h2:    clamp(1.9rem, 4.2vw, 3.4rem);
+  --t-h3:    clamp(1.4rem, 2.6vw, 2.25rem);
+  --t-quote: clamp(1.35rem, 3vw, 2.25rem);
+  --t-lead:  clamp(1.05rem, 1.5vw, 1.2rem);
+  --t-body:  1.0625rem;
+  --t-small: 0.8125rem;
+  --t-eyebrow: 0.75rem;
+
+  /* Ritme */
+  --pad:     clamp(1.25rem, 5vw, 4.5rem);
+  --maxw:    81rem;
+  --section: clamp(4rem, 9vw, 7rem);
+  --measure: 38rem;
+}
+
+/* ─────────────────────────── Basis ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-hero); line-height: 1.08; }
+h2 { font-size: var(--t-h2);   line-height: 1.1; }
+h3 { font-size: var(--t-h3);   line-height: 1.2; font-weight: 400; }
+
+p { margin: 0; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.section { padding-block: var(--section); }
+.section--sand { background: var(--sand); }
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+}
+
+.prose { color: var(--ink-soft); max-width: var(--measure); }
+
+/* Bovenkop met haarlijn in het logoverloop */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before {
+  content: "";
+  width: 3.5rem;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--gradient);
+}
+.eyebrow--plain { color: var(--faint); }
+.eyebrow--plain::before { display: none; }
+
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--t-quote);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* ─────────────────────────── Knoppen ─────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding-inline: 2rem;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn--primary { background: var(--accent); color: var(--cream); }
+.btn--primary:hover { background: var(--accent-dark); color: var(--cream); }
+
+.link-under {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid #C9B4A9;
+}
+.link-under:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ─────────────────────────── Kop van de pagina ─────────────────────────── */
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 1.5rem 0;
+}
+.masthead__logo { height: clamp(4.5rem, 10vw, 9.375rem); width: auto; }
+
+.nav { display: flex; flex-wrap: wrap; gap: 0 2.375rem; align-items: center; }
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--ink); }
+.nav a.is-cta {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ─────────────────────────── Hero ─────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 4rem;
+  align-items: center;
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(3.5rem, 8vw, 6rem);
+}
+.hero__text { display: flex; flex-direction: column; gap: 1.625rem; }
+.hero__title { max-width: 26ch; }
+.hero__actions { display: flex; align-items: center; gap: 1.375rem; flex-wrap: wrap; }
+
+/* ─────────────────────────── Fotoplekken ─────────────────────────── */
+.photo { position: relative; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.photo--empty {
+  background: var(--sand);
+  border: 1px dashed #D6BFB3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+  min-height: 16rem;
+}
+.photo--empty img { width: 3.75rem; height: auto; opacity: 0.5; object-fit: contain; }
+.photo--portrait { aspect-ratio: 3 / 4; }
+.photo--landscape { aspect-ratio: 4 / 3; }
+.photo__label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.photo__name {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--muted);
+}
+.photo__note {
+  font-size: var(--t-small);
+  line-height: 1.6;
+  color: var(--faint);
+  max-width: 17rem;
+}
+
+/* ─────────────────────────── Herkenning ─────────────────────────── */
+.recognise { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4.5rem; align-items: start; }
+.figure-line {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.figure-caption { font-size: var(--t-lead); color: var(--ink-soft); margin-top: 1rem; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  list-style: none;
+  padding-inline: 0;
+}
+.tags li {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.tags li:not(:last-child)::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--salmon);
+}
+
+/* ─────────────────────────── Aanpak ─────────────────────────── */
+.before-start {
+  border-block: 1px solid var(--rule);
+  padding-block: 1.5rem;
+  margin-block: 3.5rem;
+  display: flex;
+  gap: 2.5rem;
+  align-items: baseline;
+}
+.before-start__label { width: 12rem; flex-shrink: 0; }
+
+.disciplines {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6rem;
+}
+.discipline { display: flex; flex-direction: column; gap: 1rem; }
+
+.converge { display: block; width: 100%; height: auto; margin-top: 3.5rem; }
+
+/* ─────────────────────────── Programma ─────────────────────────── */
+.modules { list-style: none; margin: 3rem 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.modules li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.125rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.modules__name { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; }
+.modules__count { font-size: var(--t-small); letter-spacing: 0.08em; color: var(--faint); white-space: nowrap; }
+.modules__total {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  font-size: var(--t-small);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─────────────────────────── Taboe ─────────────────────────── */
+.taboo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4.5rem; align-items: center; }
+.taboo__questions { list-style: none; margin: 2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+.taboo__questions li {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.35;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--pink-soft);
+}
+
+/* ─────────────────────────── Wie zijn wij ─────────────────────────── */
+.founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; margin-top: 3.5rem; }
+.founder { display: flex; flex-direction: column; gap: 1.25rem; }
+.founder__role { font-size: var(--t-eyebrow); letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
+
+/* ─────────────────────────── Contact ─────────────────────────── */
+.contact { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.75rem; }
+.contact .prose { max-width: 34rem; }
+
+.todo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--t-small);
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  border: 1px dashed #D6BFB3;
+  padding: 0.5rem 0.875rem;
+}
+
+/* ─────────────────────────── Voet ─────────────────────────── */
+.footer { border-top: 1px solid var(--rule); padding-block: 2.5rem 3.5rem; }
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+.footer a:hover { text-decoration: underline; }
+
+/* ─────────────────────────── Beweging ─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ─────────────────────────── Smaller dan een laptop ─────────────────────────── */
+@media (max-width: 60rem) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .hero__title { max-width: none; }
+  .hero .photo--portrait { aspect-ratio: 4 / 3; }
+  .recognise,
+  .taboo,
+  .founders { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .disciplines { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+  .converge { display: none; }
+  .before-start { flex-direction: column; gap: 0.75rem; }
+  .before-start__label { width: auto; }
+}
+
+@media (max-width: 40rem) {
+  .nav { gap: 0 1.375rem; }
+  .nav a { font-size: 0.875rem; min-height: 2.5rem; }
+  /* Op een telefoon houden we twee ankers over; de rest bereik je door te scrollen. */
+  .nav a[href="#aanpak"],
+  .nav a[href="#wij"] { display: none; }
+  .masthead { padding-block: 1rem 0; gap: 0.5rem 1.5rem; }
+  .modules li { flex-direction: column; gap: 0.25rem; }
+  .taboo__questions li { padding-left: 1rem; }
+}

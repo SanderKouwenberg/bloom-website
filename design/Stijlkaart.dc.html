@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Karla:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #FFF8F5; }
+    a { color: #12655A; text-decoration: none; }
+    a:hover { color: #0D4A42; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 920px; background: #FFF8F5; font-family: 'Karla', 'Helvetica Neue', Arial, sans-serif; color: #2A2320; padding: 64px; display: flex; flex-direction: column; gap: 52px;">
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span style="width: 56px; height: 2px; background: linear-gradient(90deg, #FF66C3, #FFAA87 55%, #FFD95D);"></span>
+      <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #6E5F58;">Stijlkaart</span>
+    </div>
+    <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 44px; line-height: 1.1;">De bouwstenen van de pagina</h2>
+    <p style="margin: 0; max-width: 620px; font-size: 16px; line-height: 1.7; color: #564A44;">Alle kleuren zijn rechtstreeks uit het logobestand gemeten, niet geschat. Het kleurverloop blijft van het logo; de groene steel wordt de interactiekleur van de site.</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #A08D83;">Kleur</span>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="height: 82px; background: #FFF8F5; border: 1px solid #E8D9D0; display: block;"></span>
+        <span style="font-size: 14px;">Fond</span>
+        <span style="font-size: 12px; color: #A08D83; letter-spacing: 0.04em;">#FFF8F5</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="height: 82px; background: #F9EDE6; display: block;"></span>
+        <span style="font-size: 14px;">Zandvlak</span>
+        <span style="font-size: 12px; color: #A08D83; letter-spacing: 0.04em;">#F9EDE6</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="height: 82px; background: #2A2320; display: block;"></span>
+        <span style="font-size: 14px;">Tekst</span>
+        <span style="font-size: 12px; color: #A08D83; letter-spacing: 0.04em;">#2A2320</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="height: 82px; background: {{accent}}; display: block;"></span>
+        <span style="font-size: 14px;">Accent — steel</span>
+        <span style="font-size: 12px; color: #A08D83; letter-spacing: 0.04em;">#12655A</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <span style="height: 44px; background: linear-gradient(90deg, #FF66C3, #FF9B94 40%, #FFAA87 62%, #FFD95D); display: block;"></span>
+      <span style="font-size: 13px; color: #6E5F58;">Logoverloop #FF66C3 naar #FFD95D — uitsluitend als haarlijn en in het logo zelf, nooit als vlak of knopvulling.</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 22px;">
+    <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #A08D83;">Typografie</span>
+    <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #E8D9D0; padding-top: 20px;">
+      <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 62px; line-height: 1.05;">Koppen — Cormorant Garamond Light</span>
+      <span style="font-size: 13px; color: #A08D83;">82 / 58 / 44 / 30 px · terugval Georgia</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #E8D9D0; padding-top: 20px;">
+      <p style="margin: 0; font-size: 19px; line-height: 1.65; color: #564A44; max-width: 640px;">Lopende tekst — Karla, 19 px met een regelafstand van 1,65 en regels van hooguit 68 tekens. Gekozen op leesbaarheid voor een publiek dat vaak op een telefoon leest, en warmer dan de gebruikelijke schermletters.</p>
+      <span style="font-size: 13px; color: #A08D83;">19 / 16 px · terugval Helvetica Neue, Arial</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #E8D9D0; padding-top: 20px;">
+      <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #6E5F58;">Bovenkop — Karla, 12 px, ruime spatiëring</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #A08D83;">Knoppen en links</span>
+    <div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <a href="#" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; background: {{accent}}; color: #FFF8F5; font-size: 16px; font-weight: 500; border-radius: 2px;">Primair</a>
+      <a href="#" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; border: 1px solid #2A2320; color: #2A2320; font-size: 16px; border-radius: 2px;">Secundair</a>
+      <a href="#" style="display: inline-flex; align-items: center; min-height: 52px; color: #2A2320; font-size: 16px; border-bottom: 1px solid #C9B4A9;">Tekstlink</a>
+    </div>
+    <span style="font-size: 13px; line-height: 1.7; color: #6E5F58; max-width: 620px;">Rechthoekig met 2 px afronding, minimaal 52 px hoog zodat het ook met een duim goed te raken is. Eén primaire actie per scherm.</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #A08D83;">Fotoplek zolang beeld ontbreekt</span>
+    <div style="display: flex; gap: 24px; align-items: stretch;">
+      <div style="width: 300px; height: 200px; background: #F9EDE6; border: 1px dashed #D6BFB3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 20px;">
+        <img src="bloom-mark.png" alt="" style="width: 54px; height: auto; opacity: 0.5; display: block;">
+        <span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A08D83;">Foto volgt</span>
+        <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; color: #7A675E;">Anouk en Shirley</span>
+      </div>
+      <p style="margin: 0; flex-grow: 1; align-self: center; font-size: 15px; line-height: 1.7; color: #564A44;">Elke fotoplek benoemt zichtbaar welke foto er hoort en waar die vandaan komt, zodat niemand hem aanziet voor een designkeuze. Vervangen is straks één bestand op een vast pad neerzetten.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#12655A","options":["#12655A","#158878","#C2185B","#2A2320"],"section":"Merk"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#12655A' };
+  }
+}
+</script>
+</body>
+</html>

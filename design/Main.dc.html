@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Karla:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #FFF8F5; }
+    a { color: #12655A; text-decoration: none; }
+    a:hover { color: #0D4A42; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; background: #FFF8F5; font-family: 'Karla', 'Helvetica Neue', Arial, sans-serif; color: #2A2320; display: flex; flex-direction: column; overflow: hidden;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 24px 72px 0 72px;">
+    <img src="bloom-logo.png" alt="BLOOM" style="height: 150px; width: auto; display: block; margin-left: -6px;">
+    <nav style="display: flex; gap: 38px; align-items: center; font-size: 15px; letter-spacing: 0.04em;">
+      <a href="#programma" style="color: #6E5F58;">Het programma</a>
+      <a href="#aanpak" style="color: #6E5F58;">Onze aanpak</a>
+      <a href="#wij" style="color: #6E5F58;">Wie zijn wij</a>
+      <a href="#contact" style="color: {{accent}}; border-bottom: 1px solid {{accent}}; padding-bottom: 2px;">Contact</a>
+    </nav>
+  </header>
+
+  <div style="display: flex; flex-grow: 1; align-items: stretch; gap: 64px; padding: 0 0 0 72px; min-height: 0;">
+
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: 26px; width: 800px; padding-bottom: 40px;">
+
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="width: 56px; height: 2px; background: linear-gradient(90deg, #FF66C3, #FFAA87 55%, #FFD95D);"></span>
+          <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #6E5F58;">Diëtetiek &amp; bekkenfysiotherapie</span>
+        </div>
+        <h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 68px; line-height: 1.08; letter-spacing: -0.01em;">Niemand heeft je <em style="font-style: italic; font-weight: 300;">voorbereid</em><br>op de overgang</h1>
+      </div>
+
+      <p style="margin: 0; max-width: 620px; font-size: 19px; line-height: 1.65; color: #564A44;">En toch maken miljoenen vrouwen deze fase door. In negen modules leer je wat er in je lichaam verandert — hormonen, voeding, bekkenbodem, stemming, energie — en wat je er zelf aan kunt doen. Gemaakt door een diëtist en een bekkenfysiotherapeut.</p>
+
+      <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 26px; line-height: 1.4; color: #2A2320;">Geen snelle oplossingen. Wel duurzame balans.</p>
+
+      <div style="display: flex; align-items: center; gap: 22px; padding-top: 6px;">
+        <a href="#contact" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 32px; background: {{accent}}; color: #FFF8F5; font-size: 16px; font-weight: 500; letter-spacing: 0.02em; border-radius: 2px;">Ontdek het programma</a>
+        <a href="#programma" style="display: inline-flex; align-items: center; min-height: 52px; font-size: 16px; color: #2A2320; border-bottom: 1px solid #C9B4A9;">Bekijk de negen modules</a>
+      </div>
+
+    </div>
+
+    <div style="flex-grow: 1; display: flex; align-items: stretch; padding-top: 16px;">
+      <div style="width: 100%; background: #F9EDE6; border: 1px dashed #D6BFB3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 32px;">
+        <img src="bloom-mark.png" alt="" style="width: 82px; height: auto; opacity: 0.5; display: block;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A08D83;">Foto volgt</span>
+          <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: #7A675E;">Klaprozenveld</span>
+          <span style="font-size: 13px; line-height: 1.6; color: #A08D83; max-width: 240px;">Uit de reel van 19 juni — staand bijgesneden, origineel opvragen</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#12655A","options":["#12655A","#158878","#C2185B","#2A2320"],"section":"Merk"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#12655A' };
+  }
+}
+</script>
+</body>
+</html>
