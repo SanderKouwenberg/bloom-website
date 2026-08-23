@@ -341,7 +341,7 @@ p { margin: 0; }
 /* ─────────────────────────── Wie zijn wij ─────────────────────────── */
 .founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; margin-top: 3.5rem; }
 .founder { display: flex; flex-direction: column; gap: 1.25rem; }
-.founder__role { font-size: var(--t-eyebrow); letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
+.founder__reg { margin-top: 0.5rem; font-size: var(--t-small); letter-spacing: 0.04em; color: var(--faint); }
 
 /* ─────────────────────────── Instagram ─────────────────────────── */
 .ig-head {
@@ -392,6 +392,7 @@ p { margin: 0; }
 /* ─────────────────────────── Contact ─────────────────────────── */
 .contact { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.75rem; }
 .contact .prose { max-width: 34rem; }
+.contact__note { max-width: 30rem; font-size: var(--t-small); line-height: 1.7; color: var(--muted); }
 
 .todo {
   display: inline-flex;
