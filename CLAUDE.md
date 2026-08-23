@@ -19,6 +19,20 @@ Deze zijn niet vrijblijvend — ze zijn het resultaat van meerdere correctierond
 
 Wijzig kleuren, groottes en witruimte via de tokens bovenaan `styles.css`. Dat is het afgesproken controlemechanisme; hardgecodeerde waarden halverwege de stylesheet ondermijnen het.
 
+## Besluiten die vastliggen
+
+Deze zijn genomen, onderbouwd en niet opnieuw ter discussie. Kom je ze tegen in een review of een advies, leg het advies dan naast dit besluit voordat je iets wijzigt.
+
+**De kop van de pagina is en blijft "Niemand heeft je voorbereid op de overgang".**
+Vastgelegd op 23 augustus 2026 door de opdrachtgever, na twee eerdere kopvarianten.
+
+- Het is hun eigen zin, letterlijk uit de Instagram-post van 9 juli 2026. Dat is de merkstem, niet een bedachte variant erop.
+- Hij is in gewone woorden geschreven. Een eerdere variant ("Ontluiken met de kracht van ervaring") is expliciet afgekeurd als te bloemig voor een laagdrempelige site.
+- Een marketingreview stelde voor er "— dit programma wel" achter te plakken om de kop meer uitleggend te maken. Dat is afgewezen: het maakt de zin log, verzwakt de emotionele haak en verandert een herkenbare uitspraak in een verkoopregel.
+- De onderliggende zorg uit die review is terecht: een bezoeker moet binnen enkele seconden weten wát BLOOM is. Dat lossen we op in de bovenkop en de inleidende alinea, **niet** in de kop zelf.
+
+De regelval van de kop staat vast op twee regels; laat de browser dat niet zelf bepalen.
+
 ## Harde technische randvoorwaarden
 
 - **Geen build-stap, geen framework, geen dependencies.** De opdrachtgever moet een tekst kunnen wijzigen zonder toolchain.
