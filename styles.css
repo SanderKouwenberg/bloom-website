@@ -40,8 +40,13 @@
   --t-body:  1.0625rem;
   --t-small: 0.8125rem;
   --t-eyebrow: 0.75rem;
+  --t-payoff: clamp(1rem, calc(var(--logo-h) * 0.1714), 1.61rem);
 
   /* Ritme */
+  /* Hoogte van het logo; de payoff eronder is hieraan gekoppeld,
+     zodat beide samen schalen en de regel op de letters uitgelijnd blijft. */
+  --logo-h:  clamp(4.5rem, 10vw, 9.375rem);
+
   --pad:     clamp(1.25rem, 5vw, 4.5rem);
   --maxw:    81rem;
   --section: clamp(4rem, 9vw, 7rem);
@@ -179,7 +184,21 @@ p { margin: 0; }
   flex-wrap: wrap;
   padding-block: 1.5rem 0;
 }
-.masthead__logo { height: clamp(4.5rem, 10vw, 9.375rem); width: auto; }
+.masthead__brand { display: flex; flex-direction: column; gap: 0.375rem; }
+.masthead__logo { height: var(--logo-h); width: auto; }
+.masthead__payoff {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--t-payoff);
+  line-height: 1.2;
+  /* De letters in het logobestand beginnen op 0,0097 en eindigen op 1,1266
+     maal de logohoogte. De regel volgt die twee randen. */
+  margin-left: calc(var(--logo-h) * 0.0097);
+  letter-spacing: 0.033em;
+  color: var(--accent);
+}
 
 .nav { display: flex; flex-wrap: wrap; gap: 0 2.375rem; align-items: center; }
 .nav a {

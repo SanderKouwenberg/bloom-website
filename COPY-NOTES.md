@@ -3,6 +3,9 @@
 Voor Anouk en Shirley: hieronder staat per sectie waar de tekst vandaan komt.
 Alles onder **Van mij** is door mij geschreven en heeft jullie akkoord nodig.
 
+## Kop van de pagina
+- **Van jullie:** de payoff "Sterker in balans" onder het logo. Die stond al in de paginatitel en de deeltitel; hij staat nu ook zichtbaar op de pagina, uitgelijnd op de letters van het woordmerk.
+
 ## Hero
 - **Van jullie:** "Niemand heeft je voorbereid op de overgang. En toch maken miljoenen vrouwen deze fase door." — beeldtekst Instagram, 9 juli.
 - **Van jullie:** "Geen snelle oplossingen. Wel duurzame balans." — les 'Wie zijn wij?', platform.
