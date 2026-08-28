@@ -12,6 +12,7 @@ Alles onder **Van mij** is door mij geschreven en heeft jullie akkoord nodig.
 - **Van mij:** de opsomming "hormonen, voeding, bekkenbodem, stemming, energie" en de zin over negen modules. Samengesteld uit de moduleoverzichten.
 - **Van mij:** de bovenkop "Online programma over de overgang". Staat er bewust boven de kop, zodat een bezoeker binnen enkele seconden weet wat dit is zonder dat de kop zelf uitleggend hoeft te worden.
 - **Van mij:** de knoptekst "Stel je vraag over BLOOM". Eerder stond er "Stuur ons een bericht"; die belooft te weinig en zegt niet waarover.
+- **Beeld, niet van jullie:** de foto bij de hero (klaprozenveld) is AI-gegenereerd, geen foto uit de Instagram-reel van 19 juni. Zodra er een echte foto beschikbaar is, kan die de AI-versie vervangen.
 
 ## Herkenbaar?
 - **Van jullie:** "Wist je dat de overgang gemiddeld 7 tot 10 jaar duurt?" en de opsomming slaap, stemming, spieren, gewrichten, geheugen, energie — post 29 juni.
