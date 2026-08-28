@@ -23,7 +23,7 @@
 
 <header class="wrap masthead">
   <div class="masthead__brand">
-    <img class="masthead__logo" src="assets/img/bloom-logo.png" alt="BLOOM" width="700" height="616">
+    <img class="masthead__logo" src="assets/img/bloom-logo.png" alt="BLOOM" width="520" height="458" fetchpriority="high">
     <p class="masthead__payoff">Sterker in balans</p>
   </div>
   <nav class="nav" aria-label="Hoofdmenu">
@@ -50,7 +50,10 @@
     </div>
 
     <figure class="photo photo--portrait" style="margin:0;">
-      <img src="assets/img/hero-klaprozen.jpg" alt="Klaprozenveld in de avondzon, met een molen op de achtergrond" width="900" height="1200">
+      <picture>
+        <source srcset="assets/img/hero-klaprozen.webp" type="image/webp">
+        <img src="assets/img/hero-klaprozen.jpg" alt="Klaprozenveld in de avondzon, met een molen op de achtergrond" width="650" height="867" fetchpriority="high">
+      </picture>
     </figure>
   </section>
 
@@ -150,7 +153,10 @@
       </div>
 
       <figure class="photo photo--landscape" style="margin:0;">
-        <img src="assets/img/gesprek-bank.jpg" alt="Anouk en Shirley in gesprek" width="1600" height="1200">
+        <picture>
+          <source srcset="assets/img/gesprek-bank.webp" type="image/webp">
+          <img src="assets/img/gesprek-bank.jpg" alt="Anouk en Shirley in gesprek" width="650" height="488" loading="lazy" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
@@ -208,7 +214,10 @@
       <div class="founders">
         <div class="founder">
           <figure class="photo photo--portrait" style="margin:0;">
-            <img src="assets/img/anouk.jpg" alt="Anouk de Veen" width="900" height="1200">
+            <picture>
+              <source srcset="assets/img/anouk.webp" type="image/webp">
+              <img src="assets/img/anouk.jpg" alt="Anouk de Veen" width="650" height="867" loading="lazy" decoding="async">
+            </picture>
           </figure>
           <div>
             <h3>Anouk de Veen</h3>
@@ -218,7 +227,10 @@
         </div>
         <div class="founder">
           <figure class="photo photo--portrait" style="margin:0;">
-            <img src="assets/img/shirley.jpg" alt="Shirley Sniekers" width="900" height="1200">
+            <picture>
+              <source srcset="assets/img/shirley.webp" type="image/webp">
+              <img src="assets/img/shirley.jpg" alt="Shirley Sniekers" width="650" height="867" loading="lazy" decoding="async">
+            </picture>
           </figure>
           <div>
             <h3>Shirley Sniekers</h3>
