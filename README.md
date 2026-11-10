@@ -71,7 +71,6 @@ git add -A && git commit -m "beschrijving" && git push
 
 ## Nog te doen
 
-- **Het e-mailadres bij de contactknop.** Staat nu als placeholder in `index.html`; zoek op `EMAILADRES-NOG-INVULLEN` en verwijder daarna de melding eronder.
 - De vier foto's.
 - Prijs en duur van het programma, en idealiter één quote van een deelnemer.
 
