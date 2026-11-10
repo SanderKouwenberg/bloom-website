@@ -2,7 +2,7 @@
 
 De website van BLOOM, een online begeleidingsprogramma over de overgang van Anouk de Veen (diëtist) en Shirley Sniekers (bekkenfysiotherapeut).
 
-**Live:** https://sanderkouwenberg.github.io/bloom-website/
+**Live:** https://bloom-sterkerinbalans.nl/
 
 ## Hoe dit in elkaar zit
 
